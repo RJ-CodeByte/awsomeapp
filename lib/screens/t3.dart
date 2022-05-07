@@ -1,4 +1,8 @@
+import 'package:awsomeapp/components/bgImage.dart';
+import 'package:awsomeapp/components/drawer.dart';
 import 'package:flutter/material.dart';
+
+import '../components/changeNameCard.dart';
 
 class Task3 extends StatefulWidget {
   const Task3({Key? key}) : super(key: key);
@@ -22,74 +26,12 @@ class _Task3State extends State<Task3> {
         padding: const EdgeInsets.all(16.0),
         child: SingleChildScrollView(
           child: Card(
-            child: Column(children: [
-              Image.asset(
-                "assets/om.jpg",
-                fit: BoxFit.cover,
-              ),
-              Padding(
-                padding: const EdgeInsets.all(20.0),
-                child: Text(
-                  myText,
-                  style: TextStyle(fontSize: 25, fontWeight: FontWeight.bold),
-                ),
-              ),
-              Padding(
-                padding: const EdgeInsets.all(16.0),
-                child: TextField(
-                  controller: _nameController,
-                  keyboardType: TextInputType.text,
-                  autofocus: false,
-                  decoration: InputDecoration(
-                    hintText: "Enter Something Here",
-                    labelText: "Name",
-                    border: OutlineInputBorder(),
-                  ),
-                ),
-              ),
-            ]),
+            child:
+                ChangeNameCard(myText: myText, nameController: _nameController),
           ),
         ),
       ),
-      drawer: Drawer(
-        child: ListView(
-          padding: EdgeInsets.zero,
-          // ignore: prefer_const_literals_to_create_immutables
-          children: [
-            // const DrawerHeader(
-            //   child: Text(
-            //     "Hii I am Drawer",
-            //     style: TextStyle(color: Colors.white),
-            //   ),
-            //   decoration: BoxDecoration(color: Colors.purple),
-            // ),
-            // ignore: prefer_const_constructors
-            UserAccountsDrawerHeader(
-              accountName: Text("Xyz"),
-              accountEmail: Text("xyz@gmail.com"),
-              // ignore: prefer_const_constructors
-              currentAccountPicture: CircleAvatar(
-                // ignore: prefer_const_constructors
-                backgroundImage: NetworkImage(
-                    "https://images.unsplash.com/photo-1570295999919-56ceb5ecca61?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxzZWFyY2h8NHx8bWFufGVufDB8fDB8fA%3D%3D&auto=format&fit=crop&w=500&q=60"),
-              ),
-            ),
-            // ignore: prefer_const_constructors
-            ListTile(
-              leading: Icon(Icons.person),
-              title: Text("Account"),
-              subtitle: Text("Personal"),
-              trailing: Icon(Icons.edit),
-            ),
-            ListTile(
-              leading: Icon(Icons.email),
-              title: Text("Email"),
-              subtitle: Text("xyz@gmail.com"),
-              trailing: Icon(Icons.send),
-            )
-          ],
-        ),
-      ),
+      drawer: MyDrawer(),
       floatingActionButton: FloatingActionButton(
         onPressed: () {
           myText = _nameController.text;
