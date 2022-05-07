@@ -1,15 +1,56 @@
 import 'package:flutter/material.dart';
 
-class Task3 extends StatelessWidget {
+class Task3 extends StatefulWidget {
   const Task3({Key? key}) : super(key: key);
+
+  @override
+  State<Task3> createState() => _Task3State();
+}
+
+class _Task3State extends State<Task3> {
+  TextEditingController _nameController = TextEditingController();
+  var myText = "Change Me";
 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      backgroundColor: Colors.grey[200],
       appBar: AppBar(
         title: Text("Task 3"),
       ),
-      body: Container(),
+      body: Padding(
+        padding: const EdgeInsets.all(16.0),
+        child: SingleChildScrollView(
+          child: Card(
+            child: Column(children: [
+              Image.asset(
+                "assets/om.jpg",
+                fit: BoxFit.cover,
+              ),
+              Padding(
+                padding: const EdgeInsets.all(20.0),
+                child: Text(
+                  myText,
+                  style: TextStyle(fontSize: 25, fontWeight: FontWeight.bold),
+                ),
+              ),
+              Padding(
+                padding: const EdgeInsets.all(16.0),
+                child: TextField(
+                  controller: _nameController,
+                  keyboardType: TextInputType.text,
+                  autofocus: false,
+                  decoration: InputDecoration(
+                    hintText: "Enter Something Here",
+                    labelText: "Name",
+                    border: OutlineInputBorder(),
+                  ),
+                ),
+              ),
+            ]),
+          ),
+        ),
+      ),
       drawer: Drawer(
         child: ListView(
           padding: EdgeInsets.zero,
@@ -50,8 +91,11 @@ class Task3 extends StatelessWidget {
         ),
       ),
       floatingActionButton: FloatingActionButton(
-        onPressed: () {},
-        child: Icon(Icons.edit),
+        onPressed: () {
+          myText = _nameController.text;
+          setState(() {});
+        },
+        child: Icon(Icons.refresh_rounded),
       ),
     );
   }
