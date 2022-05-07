@@ -7,7 +7,7 @@ class Task2 extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text("Awsome App"),
+        title: Text("Task 2"),
       ),
       body: Padding(
         padding: const EdgeInsets.all(8.0),

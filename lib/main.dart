@@ -1,11 +1,15 @@
+import 'package:awsomeapp/screens/t3.dart';
 import 'package:flutter/material.dart';
 
 import 'screens/t1.dart';
 import 'screens/t2.dart';
 
 void main() {
-  runApp(const MaterialApp(
+  runApp(MaterialApp(
     title: "Flutter App",
-    home: Task2(),
+    theme: ThemeData(
+      primarySwatch: Colors.purple,
+    ),
+    home: Task3(),
   ));
 }
