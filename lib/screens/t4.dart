@@ -1,5 +1,5 @@
-import 'package:awsomeapp/components/bgImage.dart';
-import 'package:awsomeapp/components/drawer.dart';
+import 'package:awsomeapp/widgets//bgImage.dart';
+import 'package:awsomeapp/widgets//drawer.dart';
 import 'package:awsomeapp/utils/constants.dart';
 import 'package:flutter/material.dart';
 import 'dart:convert';

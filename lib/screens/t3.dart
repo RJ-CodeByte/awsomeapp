@@ -1,8 +1,8 @@
-import 'package:awsomeapp/components/bgImage.dart';
-import 'package:awsomeapp/components/drawer.dart';
+import 'package:awsomeapp/widgets/bgImage.dart';
+import 'package:awsomeapp/widgets/drawer.dart';
 import 'package:flutter/material.dart';
 
-import '../components/changeNameCard.dart';
+import '../widgets/changeNameCard.dart';
 
 class Task3 extends StatefulWidget {
   const Task3({Key? key}) : super(key: key);

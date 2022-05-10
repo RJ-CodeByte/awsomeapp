@@ -1,4 +1,4 @@
-import 'package:awsomeapp/components/bgImage.dart';
+import 'package:awsomeapp/widgets//bgImage.dart';
 import 'package:awsomeapp/screens/t1.dart';
 import 'package:awsomeapp/screens/t4.dart';
 import 'package:awsomeapp/utils/constants.dart';
