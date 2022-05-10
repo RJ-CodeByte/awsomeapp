@@ -1,5 +1,6 @@
 import 'package:awsomeapp/components/bgImage.dart';
 import 'package:awsomeapp/components/drawer.dart';
+import 'package:awsomeapp/utils/constants.dart';
 import 'package:flutter/material.dart';
 import 'dart:convert';
 import 'package:http/http.dart' as http;
@@ -36,6 +37,12 @@ class _Task4State extends State<Task4> {
       backgroundColor: Colors.grey[200],
       appBar: AppBar(
         title: Text("Task 4"),
+        actions: [
+          IconButton(onPressed: (){
+            Constants.prefs.setBool("LoggedIn", false);
+            Navigator.pushReplacementNamed(context, "/login");
+          }, icon: Icon(Icons.logout))
+        ],
       ),
       body: Padding(
         padding: const EdgeInsets.all(16.0),
