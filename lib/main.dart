@@ -1,6 +1,8 @@
 import 'package:awsomeapp/screens/t3.dart';
 import 'package:awsomeapp/screens/t4.dart';
 import 'package:awsomeapp/screens/t4Fb.dart';
+import 'package:awsomeapp/screens/t4Sb.dart';
+import 'package:awsomeapp/screens/t4_withModel.dart';
 import 'package:awsomeapp/utils/constants.dart';
 import 'package:flutter/material.dart';
 import 'package:shared_preferences/shared_preferences.dart';
@@ -16,7 +18,7 @@ Future main() async {
 
   runApp(MaterialApp(
     title: "Flutter App",
-    home: Constants.prefs.getBool("LoggedIn") == true ? Task4Fb() : LoginPage(),
+    home: Constants.prefs.getBool("LoggedIn") == true ? TaskWithModel() : LoginPage(),
     theme: ThemeData(
       primarySwatch: Colors.purple,
     ),
